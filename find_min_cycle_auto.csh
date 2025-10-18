@@ -40,8 +40,8 @@ echo "Start cycle $current_cycle passed timing."
 
 # --- Main Search Loop ---
 foreach step ($steps)
-    echo "
---- Searching with step = $step ---"
+    echo ""
+    echo "--- Searching with step = $step ---"
     # Start searching downwards from the last known good cycle
     while (1)
         set last_good_cycle = $current_cycle
