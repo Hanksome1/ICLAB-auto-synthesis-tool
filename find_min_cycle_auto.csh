@@ -78,15 +78,15 @@ end
 # --- Finalization ---
 set min_cycle = $current_cycle # After all loops, current_cycle holds the final best value.
 
-echo "
---- Finalizing ---"
+echo ""
+echo "--- Finalizing ---"
 echo "Final search complete. Minimum cycle found: $min_cycle"
 echo "Running final synthesis with minimum cycle time: $min_cycle"
 sed "s/set TEST_CYCLE .*/set TEST_CYCLE $min_cycle/" synthesis.tcl > synthesis.tcl.tmp && mv synthesis.tcl.tmp synthesis.tcl
 dc_shell -f synthesis.tcl | tee logfile >& /dev/null
 
-echo "
---------------------------------------------------"
+echo ""
+echo "--------------------------------------------------"
 echo "Final Result:"
 echo "Minimum non-violating TEST_CYCLE is: $min_cycle"
 echo "Reports are generated for this cycle time."
