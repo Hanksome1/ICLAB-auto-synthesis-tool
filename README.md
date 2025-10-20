@@ -6,18 +6,6 @@ This project provides `tcsh` scripts to automatically find the **minimum viable 
 
 ## How to Run Synthesis
 
-### Basic Execution
-
-To run the synthesis, simply execute the `run_syn.sh` script:
-
-```bash
-sh run_syn.sh
-```
-
-This command will start the synthesis process, and the output will be displayed on the screen and saved to `da.log`.
-
-### Background Execution (Recommended for Servers)
-
 Since synthesis can take a long time, it is recommended to run it in the background using `nohup`. This will prevent the process from being terminated if you disconnect from the server.
 
 ```bash
