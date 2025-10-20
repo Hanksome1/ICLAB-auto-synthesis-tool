@@ -4,6 +4,42 @@ This project provides `tcsh` scripts to automatically find the **minimum viable 
 
 ---
 
+## How to Run Synthesis
+
+### Basic Execution
+
+To run the synthesis, simply execute the `run_syn.sh` script:
+
+```bash
+sh run_syn.sh
+```
+
+This command will start the synthesis process, and the output will be displayed on the screen and saved to `da.log`.
+
+### Background Execution (Recommended for Servers)
+
+Since synthesis can take a long time, it is recommended to run it in the background using `nohup`. This will prevent the process from being terminated if you disconnect from the server.
+
+```bash
+nohup sh run_syn.sh &
+```
+
+After running this command, the synthesis will run in the background, and all output will be redirected to a file named `nohup.out` (or `da.log` as specified in the script).
+
+### Checking the Log
+
+You can monitor the progress of the synthesis by checking the log file. The `run_syn.sh` script saves the log to `da.log`.
+
+To view the log in real-time, use the `tail` command:
+
+```bash
+tail -f da.log
+```
+
+Press `Ctrl+C` to stop monitoring.
+
+---
+
 ### Scripts & Usage
 
 
@@ -18,4 +54,3 @@ This project provides `tcsh` scripts to automatically find the **minimum viable 
 ```bash
 ./find_min_cycle_auto.csh <a_known_passing_start_cycle>
 ```
-
